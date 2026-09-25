@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Group Project</string>
+
+    <string name="title">Unitefood</string>
+    <string name="welcome_title">Welcome to Unitefood</string>
+
+    <string name="welcome_desc">Connecting food charity all over the world</string>
+
+    <string name="choose_role">May we know which are you?</string>
+
+<!--roles-->
+    <string name="donor">Donor</string>
+    <string name="donor_desc">Donate food to the community.</string>
+
+    <string name="recipient">Recipient</string>
+    <string name="recipient_desc">Find available food free for you.</string>
+
+    <string name="volunteer">Volunteer</string>
+    <string name="volunteer_desc">Help collect and deliver donated food</string>
+
+
+</resources>

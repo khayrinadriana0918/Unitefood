@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volunteer Collector"
+            android:textColor="@color/primary_text"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <!-- Welcome message -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Help collect surplus food and deliver it to those in need."
+            android:textColor="@color/secondary_text"
+            android:textSize="16sp"
+            android:gravity="center" />
+
+        <!-- Available Pickups -->
+        <Button
+            android:id="@+id/availablePickupsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Available Pickups"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/button"
+            android:textColor="@color/white" />
+
+        <!-- My Pickups -->
+        <Button
+            android:id="@+id/myPickupsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="My Pickups"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/button"
+            android:textColor="@color/white" />
+
+        <!-- Collection History -->
+        <Button
+            android:id="@+id/historyBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Collection History"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/button"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</ScrollView>
