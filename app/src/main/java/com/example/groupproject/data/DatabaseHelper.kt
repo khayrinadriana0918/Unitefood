@@ -221,4 +221,17 @@ class DatabaseHelper(context: Context) :
             arrayOf(id.toString())
         )
     }
+
+    // Get history — Reserved + Collected + Expired
+    fun getDonorHistory(donorId: String): Cursor {
+        val db = readableDatabase
+        return db.query(
+            TABLE_FOOD,
+            null,
+            "$COL_DONOR_ID = ? AND $COL_STATUS IN (?, ?, ?)",
+            arrayOf(donorId, "Reserved", "Collected", "Expired"),
+            null, null,
+            "$COL_CREATED_AT DESC"
+        )
+    }
 }

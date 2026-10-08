@@ -28,8 +28,8 @@ class DonorHomeActivity : AppCompatActivity() {
              startActivity(Intent(this, ReservationsActivity::class.java))
          }
 
-        // binding.cardHistory.setOnClickListener {
-        //     startActivity(Intent(this, DonorHistoryActivity::class.java))
-        // }
+         binding.cardHistory.setOnClickListener {
+             startActivity(Intent(this, DonorHistoryActivity::class.java))
+         }
     }
 }
