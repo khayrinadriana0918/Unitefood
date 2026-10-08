@@ -70,6 +70,10 @@
         <activity
             android:name=".volunteer.SchedulePickupActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".donor.AddFoodActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
