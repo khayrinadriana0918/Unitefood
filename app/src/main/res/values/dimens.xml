@@ -7,6 +7,9 @@
     <dimen name="spacing_medium">16dp</dimen>
     <dimen name="spacing_large">24dp</dimen>
 
+
+    <dimen name="padding_small">12dp</dimen>
+
     <dimen name="title_size">28sp</dimen>
     <dimen name="subtitle_size">16sp</dimen>
     <dimen name="body_size">14sp</dimen>
