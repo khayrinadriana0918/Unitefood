@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.database.Cursor
 
 class DatabaseHelper(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -89,5 +90,39 @@ class DatabaseHelper(context: Context) :
             put(COL_CREATED_AT, createdAt)
         }
         return db.insert(TABLE_FOOD, null, values)
+    }
+
+    // Search / filter food items
+    fun searchFood(
+        donorId: String,
+        category: String,
+        area: String,
+        status: String
+    ): Cursor {
+        val db = readableDatabase
+        val where = StringBuilder("$COL_DONOR_ID = ?")
+        val args = mutableListOf(donorId)
+
+        if (category != "All" && category.isNotEmpty()) {
+            where.append(" AND $COL_CATEGORY = ?")
+            args.add(category)
+        }
+        if (area.isNotEmpty()) {
+            where.append(" AND $COL_PICKUP_AREA LIKE ?")
+            args.add("%$area%")
+        }
+        if (status != "All" && status.isNotEmpty()) {
+            where.append(" AND $COL_STATUS = ?")
+            args.add(status)
+        }
+
+        return db.query(
+            TABLE_FOOD,
+            null,
+            where.toString(),
+            args.toTypedArray(),
+            null, null,
+            "$COL_CREATED_AT DESC"
+        )
     }
 }

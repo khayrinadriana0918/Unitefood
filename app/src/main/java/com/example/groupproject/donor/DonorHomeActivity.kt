@@ -20,9 +20,9 @@ class DonorHomeActivity : AppCompatActivity() {
              startActivity(Intent(this, AddFoodActivity::class.java))
     }
 
-        // binding.cardMyListings.setOnClickListener {
-        //     startActivity(Intent(this, MyListingsActivity::class.java))
-        // }
+         binding.cardMyListings.setOnClickListener {
+             startActivity(Intent(this, MyListingsActivity::class.java))
+         }
 
         // binding.cardReservations.setOnClickListener {
         //     startActivity(Intent(this, ReservationsActivity::class.java))
