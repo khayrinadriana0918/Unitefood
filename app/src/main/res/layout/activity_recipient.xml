@@ -13,7 +13,7 @@
         android:gravity="center"
         android:padding="@dimen/spacing_medium">
 
-<!--        header-->
+<!--header-->
 
         <TextView
             android:layout_width="match_parent"
@@ -44,6 +44,34 @@
             android:textSize="@dimen/body_size"
             android:textStyle="bold"/>
 
+        <LinearLayout
+            android:id="@+id/currentLocationBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_small"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_medium">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📍 Current Location"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/subtitle_size"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/currentLocationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Getting your location...."
+                android:textColor="@color/secondary_text"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/findCharityBtn"
             android:layout_width="match_parent"
@@ -55,32 +83,24 @@
             android:textSize="17sp"
             android:textStyle="bold"/>
 
-<!--        quick access-->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:text="Quick Access"
-            android:textColor="@color/primary_text"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+<!--quick access-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_medium"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/availableFood"
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:focusable="true"
-                android:gravity="center"
-                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="@color/white"
                 android:padding="@dimen/padding_small">
 
                 <ImageView
@@ -100,55 +120,17 @@
                     android:textStyle="bold"/>
             </LinearLayout>
 
-<!--Recipient requests-->
-            <LinearLayout
-                android:id="@+id/claimFood"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="12dp">
-
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:contentDescription="Claim Food"
-                    android:src="@drawable/ic_claim_food"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_small"
-                    android:gravity="center"
-                    android:text="Claim Food"
-                    android:textColor="@color/primary_text"
-                    android:textSize="@dimen/body_size"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-        </LinearLayout>
-
-<!--second row-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-<!--pickup stats-->
+            <!--pickup stats-->
             <LinearLayout
                 android:id="@+id/pickup"
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
                 android:clickable="true"
                 android:focusable="true"
-                android:gravity="center"
-                android:orientation="vertical"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:padding="@dimen/padding_small">
 
                 <ImageView
@@ -168,17 +150,18 @@
                     android:textStyle="bold"/>
             </LinearLayout>
 
-            <!--Recipient requests-->
+            <!--History-->
             <LinearLayout
                 android:id="@+id/history"
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
                 android:clickable="true"
                 android:focusable="true"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="12dp">
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:padding="@dimen/padding_small">
 
                 <ImageView
                     android:layout_width="48dp"
@@ -197,8 +180,10 @@
                     android:textStyle="bold"/>
 
             </LinearLayout>
-
         </LinearLayout>
+
+
+
 
         <TextView
             android:layout_width="match_parent"
