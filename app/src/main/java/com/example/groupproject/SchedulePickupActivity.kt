@@ -30,12 +30,17 @@ class SchedulePickupActivity : AppCompatActivity() {
         timeBtn = findViewById(R.id.timeBtn)
         confirmPickupBtn = findViewById(R.id.confirmPickupBtn)
 
-        foodNameTV.text = "Chicken Rice"
+        val foodName = intent.getStringExtra("foodName")
+val category = intent.getStringExtra("category")
+val quantity = intent.getStringExtra("quantity")
+val area = intent.getStringExtra("area")
 
-        foodDetailsTV.text =
-            "Category: Cooked Food\n" +
-            "Quantity: 10 portions\n" +
-            "Collection Area: Putra Heights"
+foodNameTV.text = foodName
+
+foodDetailsTV.text =
+    "Category: $category\n" +
+    "Quantity: $quantity\n" +
+    "Collection Area: $area"
 
         dateBtn.setOnClickListener {
             showDatePicker()
