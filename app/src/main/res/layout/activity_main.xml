@@ -1,125 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    android:fillViewport="true">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#FFF8F0">
 
-<!--recipient menus-->
-    <LinearLayout
-        android:id="@+id/Menu"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
-
-<!--app name-->
         <TextView
-            android:id="@+id/appTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title"
-            android:textColor="@color/primary_text"
-            android:textSize="@dimen/title_size"
-            android:textStyle="bold"/>
+            android:text="UniteFood"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"/>
 
-<!--welcome title-->
         <TextView
-            android:id="@+id/welcomeTV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="@string/welcome_title"
-            android:textSize="30dp"
-            android:textColor="@color/primary_text"
-            android:textStyle="bold"/>
-
-<!--welcome description-->
-        <TextView
-            android:id="@+id/welcomeDesc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_large"
-            android:gravity="center"
-            android:text="@string/welcome_desc"
-            android:textColor="@color/secondary_text"
-            android:textSize="@dimen/body_size"/>
-
-<!--role-->
-        <TextView
-            android:id="@+id/chooseRole"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="@string/choose_role"
-            android:textColor="@color/secondary_text"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
-<!--        donor-->
-        <Button
-            android:id="@+id/donorBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_large"
-            android:backgroundTint="@color/button"
-            android:text="@string/donor"
-            android:textColor="@color/white"
-            android:textSize="17sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:text="Reducing food waste together"
+            android:textSize="14sp"
+            android:textColor="#666666"
             android:layout_marginTop="4dp"
-            android:gravity="center"
-            android:text="@string/donor_desc"
-            android:textColor="@color/secondary_text"
-            android:textSize="@dimen/body_size"/>
-
-<!--        recipient-->
-        <Button
-            android:id="@+id/recipientBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_large"
-            android:backgroundTint="@color/button"
-            android:text="@string/recipient"
-            android:textColor="@color/white"
-            android:textSize="17sp"
-            android:textStyle="bold"/>
+            android:layout_marginBottom="48dp"/>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:gravity="center"
-            android:text="@string/recipient_desc"
-            android:textColor="@color/secondary_text"
-            android:textSize="@dimen/body_size"/>
-
-<!--        volunteer-->
-        <Button
-            android:id="@+id/volunteerBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_large"
-            android:backgroundTint="@color/button"
-            android:text="@string/volunteer"
-            android:textColor="@color/white"
-            android:textSize="17sp"
-            android:textStyle="bold"/>
+            android:text="— Test Menu —"
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:layout_marginBottom="16dp"/>
 
-        <TextView
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOpenDonor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:gravity="center"
-            android:text="@string/volunteer_desc"
-            android:textColor="@color/secondary_text"
-            android:textSize="@dimen/body_size"/>
+            android:text="🥗  Donor Module"
+            android:padding="16dp"
+            android:textSize="16sp"/>
 
-    </LinearLayout>
-</ScrollView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(Recipient &amp; Volunteer modules coming soon)"
+            android:textSize="12sp"
+            android:textColor="#AAAAAA"
+            android:layout_marginTop="24dp"/>
+
+</LinearLayout>
