@@ -3,6 +3,7 @@ package com.example.groupproject.donor
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.groupproject.databinding.ActivityDonorHomeBinding
+import android.content.Intent
 
 class DonorHomeActivity : AppCompatActivity() {
 
@@ -15,9 +16,9 @@ class DonorHomeActivity : AppCompatActivity() {
 
         supportActionBar?.title = "UniteFood — Donor"
 
-        // binding.cardAddFood.setOnClickListener {
-        //     startActivity(Intent(this, AddFoodActivity::class.java))
-        // }
+         binding.cardAddFood.setOnClickListener {
+             startActivity(Intent(this, AddFoodActivity::class.java))
+    }
 
         // binding.cardMyListings.setOnClickListener {
         //     startActivity(Intent(this, MyListingsActivity::class.java))

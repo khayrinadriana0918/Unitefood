@@ -24,6 +24,10 @@
 
         <activity android:name=".donor.DonorHomeActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".donor.AddFoodActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
