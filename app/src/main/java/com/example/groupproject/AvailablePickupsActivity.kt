@@ -199,15 +199,20 @@ class AvailablePickupsActivity : AppCompatActivity() {
 
             val scheduleButton = Button(this)
 
-            scheduleButton.text = "Schedule Pickup"
-            scheduleButton.setOnClickListener {
+           scheduleButton.setOnClickListener {
 
-                Toast.makeText(
-                    this,
-                    "${pickup.foodName} selected for pickup.",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
+    val intent = Intent(
+        this,
+        SchedulePickupActivity::class.java
+    )
+
+    intent.putExtra("foodName", pickup.foodName)
+    intent.putExtra("category", pickup.category)
+    intent.putExtra("quantity", pickup.quantity)
+    intent.putExtra("area", pickup.area)
+
+    startActivity(intent)
+}
 
             card.addView(foodName)
             card.addView(details)
