@@ -83,7 +83,12 @@
                 android:orientation="vertical"
                 android:padding="@dimen/padding_small">
 
-            <!--icon here-->
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="Available Food"
+                    android:src="@drawable/ic_available_food"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -107,14 +112,18 @@
                 android:orientation="vertical"
                 android:padding="12dp">
 
-<!--icon for requests here-->
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="Claim Food"
+                    android:src="@drawable/ic_claim_food"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_small"
                     android:gravity="center"
-                    android:text="My Requests"
+                    android:text="Claim Food"
                     android:textColor="@color/primary_text"
                     android:textSize="@dimen/body_size"
                     android:textStyle="bold"/>
@@ -132,7 +141,7 @@
 
 <!--pickup stats-->
             <LinearLayout
-                android:id="@+id/pickupStatus"
+                android:id="@+id/pickup"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -142,14 +151,18 @@
                 android:orientation="vertical"
                 android:padding="@dimen/padding_small">
 
-<!--icon pickup code here-->
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="Pickup"
+                    android:src="@drawable/ic_pickup"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_small"
                     android:gravity="center"
-                    android:text="Pickup Status"
+                    android:text="Pickup"
                     android:textColor="@color/primary_text"
                     android:textSize="14sp"
                     android:textStyle="bold"/>
@@ -167,7 +180,11 @@
                 android:orientation="vertical"
                 android:padding="12dp">
 
-                <!--icon for history here-->
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="History"
+                    android:src="@drawable/history"/>
 
                 <TextView
                     android:layout_width="wrap_content"

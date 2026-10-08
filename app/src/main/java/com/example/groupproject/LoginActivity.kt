@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
 
         usernameInput = findViewById(R.id.editUsername)
         emailInput = findViewById(R.id.editEmail)
-        passwordInput = findViewById(R.id.editEmail)
+        passwordInput = findViewById(R.id.editPwd)
 
         loginButton = findViewById(R.id.btnLogin)
         switchButton = findViewById(R.id.Switch)
