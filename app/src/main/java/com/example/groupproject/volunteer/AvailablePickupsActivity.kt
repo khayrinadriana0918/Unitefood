@@ -1,12 +1,15 @@
-package com.example.groupproject
+package com.example.groupproject.volunteer
 
 import android.content.Intent
+import android.graphics.Typeface
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.Gravity
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.groupproject.R
 
 data class Pickup(
     val foodName: String,
@@ -90,7 +93,7 @@ class AvailablePickupsActivity : AppCompatActivity() {
 
                 override fun onItemSelected(
                     parent: AdapterView<*>?,
-                    view: android.view.View?,
+                    view: View?,
                     position: Int,
                     id: Long
                 ) {
@@ -185,7 +188,7 @@ class AvailablePickupsActivity : AppCompatActivity() {
             foodName.setTextColor(
                 getColor(R.color.primary_text)
             )
-            foodName.setTypeface(null, android.graphics.Typeface.BOLD)
+            foodName.setTypeface(null, Typeface.BOLD)
 
             val details = TextView(this)
 

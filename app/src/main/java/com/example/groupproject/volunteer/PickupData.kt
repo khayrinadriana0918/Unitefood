@@ -1,3 +1,5 @@
+package com.example.groupproject.volunteer
+
 data class PickupData(
     val foodName: String,
     val category: String,

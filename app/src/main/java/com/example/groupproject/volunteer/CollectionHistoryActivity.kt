@@ -1,4 +1,4 @@
-package com.example.groupproject
+package com.example.groupproject.volunteer
 
 import android.graphics.Typeface
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.groupproject.R
 
 class CollectionHistoryActivity : AppCompatActivity() {
 
