@@ -52,31 +52,49 @@ foodDetailsTV.text =
 
         confirmPickupBtn.setOnClickListener {
 
-            if (selectedDate.isEmpty()) {
-                Toast.makeText(
-                    this,
-                    "Please select a pickup date.",
-                    Toast.LENGTH_SHORT
-                ).show()
-                return@setOnClickListener
-            }
-
-            if (selectedTime.isEmpty()) {
-                Toast.makeText(
-                    this,
-                    "Please select a pickup time.",
-                    Toast.LENGTH_SHORT
-                ).show()
-                return@setOnClickListener
-            }
-
-            Toast.makeText(
-                this,
-                "Pickup scheduled successfully!",
-                Toast.LENGTH_LONG
-            ).show()
-        }
+    if (selectedDate.isEmpty()) {
+        Toast.makeText(
+            this,
+            "Please select a pickup date.",
+            Toast.LENGTH_SHORT
+        ).show()
+        return@setOnClickListener
     }
+
+    if (selectedTime.isEmpty()) {
+        Toast.makeText(
+            this,
+            "Please select a pickup time.",
+            Toast.LENGTH_SHORT
+        ).show()
+        return@setOnClickListener
+    }
+
+    val foodName = intent.getStringExtra("foodName") ?: ""
+    val category = intent.getStringExtra("category") ?: ""
+    val quantity = intent.getStringExtra("quantity") ?: ""
+    val area = intent.getStringExtra("area") ?: ""
+
+    val newPickup = PickupData(
+        foodName = foodName,
+        category = category,
+        quantity = quantity,
+        area = area,
+        date = selectedDate,
+        time = selectedTime,
+        status = "Scheduled"
+    )
+
+    PickupRepository.scheduledPickups.add(newPickup)
+
+    Toast.makeText(
+        this,
+        "Pickup scheduled successfully!",
+        Toast.LENGTH_LONG
+    ).show()
+
+    finish()
+}
 
     private fun showDatePicker() {
 
