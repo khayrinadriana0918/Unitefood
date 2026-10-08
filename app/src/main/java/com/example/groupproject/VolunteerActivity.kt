@@ -39,5 +39,15 @@ class VolunteerActivity : AppCompatActivity() {
                 )
             )
         }
+
+        historyBtn.setOnClickListener {
+
+            startActivity(
+                Intent(
+                    this,
+                    CollectionHistoryActivity::class.java
+                )
+            )
+        }
     }
 }
