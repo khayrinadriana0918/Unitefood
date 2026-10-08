@@ -24,9 +24,9 @@ class DonorHomeActivity : AppCompatActivity() {
              startActivity(Intent(this, MyListingsActivity::class.java))
          }
 
-        // binding.cardReservations.setOnClickListener {
-        //     startActivity(Intent(this, ReservationsActivity::class.java))
-        // }
+         binding.cardReservations.setOnClickListener {
+             startActivity(Intent(this, ReservationsActivity::class.java))
+         }
 
         // binding.cardHistory.setOnClickListener {
         //     startActivity(Intent(this, DonorHistoryActivity::class.java))

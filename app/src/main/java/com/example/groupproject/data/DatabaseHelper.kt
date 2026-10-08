@@ -178,4 +178,47 @@ class DatabaseHelper(context: Context) :
             arrayOf(id.toString())
         )
     }
+
+    // Get reserved foods for donor
+    fun getReservedFoods(donorId: String): Cursor {
+        val db = readableDatabase
+        return db.query(
+            TABLE_FOOD,
+            null,
+            "$COL_DONOR_ID = ? AND $COL_STATUS = ?",
+            arrayOf(donorId, "Reserved"),
+            null, null,
+            "$COL_CREATED_AT DESC"
+        )
+    }
+
+    // Schedule pickup — set pickup_time + change status
+    fun schedulePickup(id: Int, pickupTime: String, newStatus: String): Int {
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put(COL_PICKUP_TIME, pickupTime)
+            put(COL_STATUS, newStatus)
+        }
+        return db.update(
+            TABLE_FOOD,
+            values,
+            "$COL_ID = ?",
+            arrayOf(id.toString())
+        )
+    }
+
+    // For testing — reserve an item manually
+    fun reserveForTest(id: Int, reservedBy: String): Int {
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put(COL_STATUS, "Reserved")
+            put(COL_RESERVED_BY, reservedBy)
+        }
+        return db.update(
+            TABLE_FOOD,
+            values,
+            "$COL_ID = ?",
+            arrayOf(id.toString())
+        )
+    }
 }
