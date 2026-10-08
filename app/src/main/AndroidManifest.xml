@@ -31,6 +31,27 @@
         <activity
             android:name=".donor.DonorHomeActivity"
             android:exported="false" />
+
+<!--volunteer-->
+        <activity
+            android:name=".volunteer.VolunteerActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".volunteer.AvailablePickupsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".volunteer.MyPickupsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".volunteer.CollectionHistoryActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".volunteer.SchedulePickupActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

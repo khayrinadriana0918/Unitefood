@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.groupproject.donor.DonorHomeActivity
 import com.example.groupproject.recipient.RecipientActivity
+import com.example.groupproject.volunteer.VolunteerActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         volunteerButton.setOnClickListener {
-            // Volunteer page will be connected here
+            startActivity(Intent(this, VolunteerActivity::class.java))
         }
     }
 }

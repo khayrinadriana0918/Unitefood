@@ -102,7 +102,7 @@
 
 <!--Recipient requests-->
             <LinearLayout
-                android:id="@+id/myRequests"
+                android:id="@+id/claimFood"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
