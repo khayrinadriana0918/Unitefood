@@ -24,8 +24,14 @@
             android:name=".MainActivity"
             android:exported="false" />
 
+<!--recipient-->
+
         <activity
             android:name=".recipient.RecipientActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".recipient.AvailableFoodRA"
             android:exported="false" />
 
         <activity
