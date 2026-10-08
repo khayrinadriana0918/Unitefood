@@ -40,11 +40,9 @@ class MyListingsActivity : AppCompatActivity() {
 
         // Adapter
         adapter = FoodAdapter(this, null) { foodId ->
-            // Bila tekan item — buka edit screen (nanti kita buat)
-            // Sementara: papar Toast je
-            android.widget.Toast.makeText(
-                this, "Food ID: $foodId", android.widget.Toast.LENGTH_SHORT
-            ).show()
+            val intent = android.content.Intent(this, EditFoodActivity::class.java)
+            intent.putExtra("foodId", foodId)
+            startActivity(intent)
         }
 
         binding.rvListings.layoutManager = LinearLayoutManager(this)

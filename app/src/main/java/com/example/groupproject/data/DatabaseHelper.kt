@@ -125,4 +125,57 @@ class DatabaseHelper(context: Context) :
             "$COL_CREATED_AT DESC"
         )
     }
+
+    // Get single food item by ID
+    fun getFoodById(id: Int): Cursor {
+        val db = readableDatabase
+        return db.query(
+            TABLE_FOOD,
+            null,
+            "$COL_ID = ?",
+            arrayOf(id.toString()),
+            null, null, null
+        )
+    }
+
+    // Update existing food item
+    fun updateFood(
+        id: Int,
+        name: String,
+        category: String,
+        quantity: Int,
+        unit: String,
+        description: String,
+        pickupArea: String,
+        pickupAddress: String,
+        expiryDate: String
+    ): Int {
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put(COL_NAME, name)
+            put(COL_CATEGORY, category)
+            put(COL_QUANTITY, quantity)
+            put(COL_UNIT, unit)
+            put(COL_DESCRIPTION, description)
+            put(COL_PICKUP_AREA, pickupArea)
+            put(COL_PICKUP_ADDRESS, pickupAddress)
+            put(COL_EXPIRY_DATE, expiryDate)
+        }
+        return db.update(
+            TABLE_FOOD,
+            values,
+            "$COL_ID = ?",
+            arrayOf(id.toString())
+        )
+    }
+
+    // Delete food item
+    fun deleteFood(id: Int): Int {
+        val db = writableDatabase
+        return db.delete(
+            TABLE_FOOD,
+            "$COL_ID = ?",
+            arrayOf(id.toString())
+        )
+    }
 }
