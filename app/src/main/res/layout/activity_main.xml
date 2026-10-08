@@ -16,7 +16,7 @@
 
 <!--app name-->
         <TextView
-            android:id="@+id/appTitle"
+            android:id="@+id/roleTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title"
