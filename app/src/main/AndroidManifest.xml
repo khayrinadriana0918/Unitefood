@@ -13,16 +13,50 @@
         android:theme="@style/Theme.GroupProject">
         <activity
             android:name=".LoginActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".donor.DonorHomeActivity"
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+<!--recipient-->
+
+        <activity
+            android:name=".recipient.RecipientActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".recipient.AvailableFoodRA"
+            android:exported="false" />
+
+        <activity
+            android:name=".donor.DonorHomeActivity"
+            android:exported="false" />
+
+<!--volunteer-->
+        <activity
+            android:name=".volunteer.VolunteerActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".volunteer.AvailablePickupsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".volunteer.MyPickupsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".volunteer.CollectionHistoryActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".volunteer.SchedulePickupActivity"
             android:exported="false" />
 
         <activity
