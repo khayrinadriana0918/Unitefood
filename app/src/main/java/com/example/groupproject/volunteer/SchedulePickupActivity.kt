@@ -23,13 +23,13 @@ class SchedulePickupActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_schedule_pickup)
+        setContentView(R.layout.activity_schedule_pickup_v)
 
-        foodNameTV = findViewById(R.id.foodNameTV)
+        foodNameTV = findViewById(R.id.tvFoodName)
         foodDetailsTV = findViewById(R.id.foodDetailsTV)
-        dateBtn = findViewById(R.id.dateBtn)
-        timeBtn = findViewById(R.id.timeBtn)
-        confirmPickupBtn = findViewById(R.id.confirmPickupBtn)
+        dateBtn = findViewById(R.id.btnPickDate)
+        timeBtn = findViewById(R.id.btnPickTime)
+        confirmPickupBtn = findViewById(R.id.btnConfirm)
 
         val foodName = intent.getStringExtra("foodName")
         val category = intent.getStringExtra("category")
