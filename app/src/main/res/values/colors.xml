@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- UniteFood brand palette -->
     <color name="maroon_primary">#8D2B2B</color>
     <color name="maroon_dark">#5D1C1C</color>
     <color name="cream_bg">#FFF8F0</color>
     <color name="orange_accent">#FFB74D</color>
+
+    <!-- Shared layout colors -->
+    <color name="background">#FFF8F0</color>
+    <color name="white">#FFFFFF</color>
+    <color name="button">#8D2B2B</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#5D4037</color>
+
+    <!-- Original color names retained -->
     <color name="text_dark">#212121</color>
     <color name="text_grey">#5D4037</color>
 </resources>
