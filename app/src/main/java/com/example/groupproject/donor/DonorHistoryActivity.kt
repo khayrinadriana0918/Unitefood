@@ -1,3 +1,4 @@
+
 package com.example.groupproject.donor
 
 import android.database.Cursor
@@ -15,8 +16,8 @@ class DonorHistoryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDonorHistoryBinding
     private lateinit var db: DatabaseHelper
     private lateinit var adapter: FoodAdapter
-    private val donorId = "donor_001"
 
+    private val donorId = "donor_001"
     private val filters = listOf("All", "Reserved", "Collected", "Expired")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,19 +30,23 @@ class DonorHistoryActivity : AppCompatActivity() {
 
         db = DatabaseHelper(this)
 
-        adapter = FoodAdapter(this, null) { /* view only, tak buat apa */ }
+        adapter = FoodAdapter(this, null) { }
         binding.rvHistory.layoutManager = LinearLayoutManager(this)
         binding.rvHistory.adapter = adapter
 
-        // Filter dropdown
         val filterAdapter = ArrayAdapter(
-            this, android.R.layout.simple_dropdown_item_1line, filters
+            this,
+            android.R.layout.simple_dropdown_item_1line,
+            filters
         )
+
         binding.spHistoryFilter.setAdapter(filterAdapter)
         binding.spHistoryFilter.setText("All", false)
+
         binding.spHistoryFilter.setOnClickListener {
             binding.spHistoryFilter.showDropDown()
         }
+
         binding.spHistoryFilter.setOnItemClickListener { _, _, _, _ ->
             loadHistory()
         }
@@ -50,21 +55,20 @@ class DonorHistoryActivity : AppCompatActivity() {
     }
 
     private fun loadHistory() {
-        val selected = binding.spHistoryFilter.text.toString().ifEmpty { "All" }
-
-        val allCursor = db.getDonorHistory(donorId)
+        val selected =
+            binding.spHistoryFilter.text.toString().ifEmpty { "All" }
 
         val filtered: Cursor = if (selected == "All") {
-            allCursor
+            db.getDonorHistory(donorId)
         } else {
-            // make new cursor with filter
-            val db2 = DatabaseHelper(this).readableDatabase
-            db2.query(
+            db.readableDatabase.query(
                 DatabaseHelper.TABLE_FOOD,
                 null,
-                "${DatabaseHelper.COL_DONOR_ID} = ? AND ${DatabaseHelper.COL_STATUS} = ?",
+                "${DatabaseHelper.COL_DONOR_ID} = ? AND " +
+                        "${DatabaseHelper.COL_STATUS} = ?",
                 arrayOf(donorId, selected),
-                null, null,
+                null,
+                null,
                 "${DatabaseHelper.COL_CREATED_AT} DESC"
             )
         }
@@ -83,5 +87,10 @@ class DonorHistoryActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         finish()
         return true
+    }
+
+    override fun onDestroy() {
+        binding.rvHistory.adapter = null
+        super.onDestroy()
     }
 }

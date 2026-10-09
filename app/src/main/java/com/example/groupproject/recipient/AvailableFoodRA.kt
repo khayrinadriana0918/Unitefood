@@ -73,7 +73,7 @@ class AvailableFoodRA : AppCompatActivity() {
 
         if (cursor.count == 0) {
             cursor.close()
-            showSampleFood()
+            addMessage("No food is currently available.")
             return
         }
 
@@ -122,16 +122,14 @@ class AvailableFoodRA : AppCompatActivity() {
                 setPadding(0, 12, 0, 12)
             })
 
-            val claimButton = Button(this).apply {
+            card.addView(Button(this).apply {
                 text = "Claim Food"
                 setBackgroundColor(getColor(R.color.button))
                 setTextColor(getColor(R.color.white))
                 setOnClickListener {
                     claimFood(id)
                 }
-            }
-
-            card.addView(claimButton)
+            })
 
             val params = LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -143,55 +141,6 @@ class AvailableFoodRA : AppCompatActivity() {
 
         cursor.close()
     }
-
-    private fun showSampleFood() {
-        val samples = listOf(
-            Triple("Cooked Meals", "10 portions", "Shah Alam"),
-            Triple("Fresh Vegetables", "5 packs", "Section 7, Shah Alam"),
-            Triple("Bread and Pastries", "12 packs", "Klang"),
-            Triple("Rice and Curry", "8 portions", "Petaling Jaya")
-        )
-
-        samples.forEach { (name, quantity, area) ->
-            val card = LinearLayout(this).apply {
-                orientation = LinearLayout.VERTICAL
-                setPadding(32, 32, 32, 32)
-                setBackgroundColor(getColor(R.color.white))
-            }
-
-            card.addView(TextView(this).apply {
-                text = name
-                textSize = 20f
-                setTextColor(getColor(R.color.primary_text))
-            })
-
-            card.addView(TextView(this).apply {
-                text = "Quantity: $quantity\nCollection Area: $area"
-                textSize = 15f
-                setPadding(0, 12, 0, 12)
-                setTextColor(getColor(R.color.secondary_text))
-            })
-
-            card.addView(Button(this).apply {
-                text = "View Details"
-                setOnClickListener {
-                    Toast.makeText(
-                        this@AvailableFoodRA,
-                        "$name — sample food item",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            })
-
-            val params = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            )
-            params.bottomMargin = 24
-            foodContainer.addView(card, params)
-        }
-    }
-
 
     private fun claimFood(foodId: Int) {
         val values = ContentValues().apply {
@@ -213,15 +162,15 @@ class AvailableFoodRA : AppCompatActivity() {
                 "Food claimed successfully. Check Pickup for details.",
                 Toast.LENGTH_LONG
             ).show()
-            loadAvailableFood()
         } else {
             Toast.makeText(
                 this,
                 "This food is no longer available.",
                 Toast.LENGTH_LONG
             ).show()
-            loadAvailableFood()
         }
+
+        loadAvailableFood()
     }
 
     private fun addMessage(message: String) {

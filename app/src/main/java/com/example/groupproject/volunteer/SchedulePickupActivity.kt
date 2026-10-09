@@ -25,11 +25,11 @@ class SchedulePickupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_schedule_pickup_v)
 
-        foodNameTV = findViewById(R.id.tvFoodName)
+        foodNameTV = findViewById(R.id.foodNameTV)
         foodDetailsTV = findViewById(R.id.foodDetailsTV)
-        dateBtn = findViewById(R.id.btnPickDate)
-        timeBtn = findViewById(R.id.btnPickTime)
-        confirmPickupBtn = findViewById(R.id.btnConfirm)
+        dateBtn = findViewById(R.id.dateBtn)
+        timeBtn = findViewById(R.id.timeBtn)
+        confirmPickupBtn = findViewById(R.id.confirmPickupBtn)
 
         val foodName = intent.getStringExtra("foodName")
         val category = intent.getStringExtra("category")

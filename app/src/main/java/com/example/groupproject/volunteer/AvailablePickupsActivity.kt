@@ -1,3 +1,4 @@
+
 package com.example.groupproject.volunteer
 
 import android.content.Intent
@@ -7,7 +8,13 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.Gravity
 import android.view.View
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.Spinner
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.groupproject.R
 
@@ -26,34 +33,14 @@ class AvailablePickupsActivity : AppCompatActivity() {
     private lateinit var pickupContainer: LinearLayout
 
     private val pickups = listOf(
-        Pickup(
-            "Chicken Rice",
-            "Cooked Food",
-            "10 portions",
-            "Putra Heights",
-            "25 Sept, 2:00 PM - 4:00 PM"
-        ),
-        Pickup(
-            "Bread",
-            "Bakery",
-            "20 packs",
-            "Subang Jaya",
-            "25 Sept, 4:00 PM - 6:00 PM"
-        ),
-        Pickup(
-            "Fresh Vegetables",
-            "Vegetables",
-            "15 kg",
-            "Shah Alam",
-            "26 Sept, 10:00 AM - 12:00 PM"
-        ),
-        Pickup(
-            "Fruit Boxes",
-            "Fruits",
-            "8 boxes",
-            "USJ",
-            "26 Sept, 2:00 PM - 4:00 PM"
-        )
+        Pickup("Chicken Rice", "Cooked Food", "10 portions",
+            "Putra Heights", "25 Sept, 2:00 PM - 4:00 PM"),
+        Pickup("Bread", "Bakery", "20 packs",
+            "Subang Jaya", "25 Sept, 4:00 PM - 6:00 PM"),
+        Pickup("Fresh Vegetables", "Vegetables", "15 kg",
+            "Shah Alam", "26 Sept, 10:00 AM - 12:00 PM"),
+        Pickup("Fruit Boxes", "Fruits", "8 boxes",
+            "USJ", "26 Sept, 2:00 PM - 4:00 PM")
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,19 +55,12 @@ class AvailablePickupsActivity : AppCompatActivity() {
         displayPickups(pickups)
 
         searchET.addTextChangedListener(object : TextWatcher {
-
             override fun beforeTextChanged(
-                s: CharSequence?,
-                start: Int,
-                count: Int,
-                after: Int
+                s: CharSequence?, start: Int, count: Int, after: Int
             ) {}
 
             override fun onTextChanged(
-                s: CharSequence?,
-                start: Int,
-                before: Int,
-                count: Int
+                s: CharSequence?, start: Int, before: Int, count: Int
             ) {
                 filterPickups()
             }
@@ -90,7 +70,6 @@ class AvailablePickupsActivity : AppCompatActivity() {
 
         categorySpinner.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
-
                 override fun onItemSelected(
                     parent: AdapterView<*>?,
                     view: View?,
@@ -105,7 +84,6 @@ class AvailablePickupsActivity : AppCompatActivity() {
     }
 
     private fun setupCategorySpinner() {
-
         val categories = arrayOf(
             "All Categories",
             "Cooked Food",
@@ -128,19 +106,18 @@ class AvailablePickupsActivity : AppCompatActivity() {
     }
 
     private fun filterPickups() {
-
         val searchText = searchET.text.toString().trim().lowercase()
-        val selectedCategory = categorySpinner.selectedItem.toString()
+        val selectedCategory =
+            categorySpinner.selectedItem?.toString() ?: "All Categories"
 
         val filteredList = pickups.filter { pickup ->
-
             val matchesSearch =
                 pickup.foodName.lowercase().contains(searchText) ||
-                pickup.area.lowercase().contains(searchText)
+                        pickup.area.lowercase().contains(searchText)
 
             val matchesCategory =
                 selectedCategory == "All Categories" ||
-                pickup.category == selectedCategory
+                        pickup.category == selectedCategory
 
             matchesSearch && matchesCategory
         }
@@ -149,79 +126,65 @@ class AvailablePickupsActivity : AppCompatActivity() {
     }
 
     private fun displayPickups(list: List<Pickup>) {
-
         pickupContainer.removeAllViews()
 
         if (list.isEmpty()) {
-
-            val emptyMessage = TextView(this)
-
-            emptyMessage.text = "No available pickups found."
-            emptyMessage.textSize = 16f
-            emptyMessage.gravity = Gravity.CENTER
-            emptyMessage.setPadding(0, 40, 0, 40)
-
-            pickupContainer.addView(emptyMessage)
-
+            pickupContainer.addView(TextView(this).apply {
+                text = "No available pickups found."
+                textSize = 16f
+                gravity = Gravity.CENTER
+                setPadding(0, 40, 0, 40)
+            })
             return
         }
 
         for (pickup in list) {
-
-            val card = LinearLayout(this)
-
-            card.orientation = LinearLayout.VERTICAL
-            card.setPadding(20, 20, 20, 20)
+            val card = LinearLayout(this).apply {
+                orientation = LinearLayout.VERTICAL
+                setPadding(20, 20, 20, 20)
+            }
 
             val params = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
             )
-
             params.setMargins(0, 0, 0, 16)
-
             card.layoutParams = params
 
-            val foodName = TextView(this)
-            foodName.text = pickup.foodName
-            foodName.textSize = 20f
-            foodName.setTextColor(
-                getColor(R.color.primary_text)
-            )
-            foodName.setTypeface(null, Typeface.BOLD)
+            val foodName = TextView(this).apply {
+                text = pickup.foodName
+                textSize = 20f
+                setTextColor(getColor(R.color.primary_text))
+                setTypeface(null, Typeface.BOLD)
+            }
 
-            val details = TextView(this)
+            val details = TextView(this).apply {
+                text = "Category: ${pickup.category}\n" +
+                        "Quantity: ${pickup.quantity}\n" +
+                        "Area: ${pickup.area}\n" +
+                        "Pickup: ${pickup.pickupTime}"
+                textSize = 15f
+                setPadding(0, 8, 0, 8)
+            }
 
-            details.text =
-                "Category: ${pickup.category}\n" +
-                "Quantity: ${pickup.quantity}\n" +
-                "Area: ${pickup.area}\n" +
-                "Pickup: ${pickup.pickupTime}"
-
-            details.textSize = 15f
-            details.setPadding(0, 8, 0, 8)
-
-            val scheduleButton = Button(this)
-
-           scheduleButton.setOnClickListener {
-
-    val intent = Intent(
-        this,
-        SchedulePickupActivity::class.java
-    )
-
-    intent.putExtra("foodName", pickup.foodName)
-    intent.putExtra("category", pickup.category)
-    intent.putExtra("quantity", pickup.quantity)
-    intent.putExtra("area", pickup.area)
-
-    startActivity(intent)
-}
+            val scheduleButton = Button(this).apply {
+                text = "Schedule Pickup"
+                setOnClickListener {
+                    val intent = Intent(
+                        this@AvailablePickupsActivity,
+                        SchedulePickupActivity::class.java
+                    )
+                    intent.putExtra("foodName", pickup.foodName)
+                    intent.putExtra("category", pickup.category)
+                    intent.putExtra("quantity", pickup.quantity)
+                    intent.putExtra("area", pickup.area)
+                    startActivity(intent)
+                }
+            }
 
             card.addView(foodName)
             card.addView(details)
             card.addView(scheduleButton)
-
             pickupContainer.addView(card)
         }
     }

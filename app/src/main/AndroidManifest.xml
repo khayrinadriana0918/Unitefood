@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GroupProject">
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -22,20 +21,31 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+        <activity android:name=".MainActivity" android:exported="false" />
 
-<!--recipient-->
+        <!-- Recipient -->
+        <activity android:name=".recipient.RecipientActivity" android:exported="false" />
+        <activity android:name=".recipient.AvailableFoodRA" android:exported="false" />
+        <activity android:name=".recipient.PickupRA" android:exported="false" />
+        <activity android:name=".recipient.HistoryRA" android:exported="false" />
 
-        <activity
-            android:name=".recipient.RecipientActivity"
-            android:exported="false" />
+        <!-- Donor -->
+        <activity android:name=".donor.DonorHomeActivity" android:exported="false" />
+        <activity android:name=".donor.AddFoodActivity" android:exported="false" />
+        <activity android:name=".donor.MyListingsActivity" android:exported="false" />
+        <activity android:name=".donor.EditFoodActivity" android:exported="false" />
+        <activity android:name=".donor.ReservationsActivity" android:exported="false" />
+        <activity android:name=".donor.DonorHistoryActivity" android:exported="false" />
+        <activity android:name=".donor.SchedulePickupActivity" android:exported="false" />
 
-        <activity
-            android:name=".recipient.AvailableFoodRA"
-            android:exported="false" />
+        <!-- Volunteer -->
+        <activity android:name=".volunteer.VolunteerActivity" android:exported="false" />
+        <activity android:name=".volunteer.AvailablePickupsActivity" android:exported="false" />
+        <activity android:name=".volunteer.MyPickupsActivity" android:exported="false" />
+        <activity android:name=".volunteer.CollectionHistoryActivity" android:exported="false" />
+        <activity android:name=".volunteer.SchedulePickupActivity" android:exported="false" />
 
+<<<<<<< HEAD
         <activity
             android:name=".recipient.PickupRA"
             android:exported="false" />
@@ -97,4 +107,7 @@
 
     </application>
 
+=======
+    </application>
+>>>>>>> b54270e (Update fixes)
 </manifest>
