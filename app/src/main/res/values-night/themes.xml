@@ -1,7 +1,29 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme (night mode). -->
     <style name="Base.Theme.GroupProject" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">#FFB4A8</item>
+        <item name="colorOnPrimary">#690005</item>
+        <item name="colorPrimaryContainer">#8D2B2B</item>
+        <item name="colorOnPrimaryContainer">#FFDAD6</item>
+
+        <item name="colorSecondary">#FFD180</item>
+        <item name="colorOnSecondary">#3E2723</item>
+        <item name="colorSecondaryContainer">#B26A00</item>
+        <item name="colorOnSecondaryContainer">#FFE0B2</item>
+
+        <item name="android:colorBackground">#1A1110</item>
+        <item name="colorSurface">#221716</item>
+        <item name="colorOnSurface">#F1DEDB</item>
+        <item name="colorOnSurfaceVariant">#D7C2BE</item>
+
+        <item name="colorOutline">#A08C88</item>
+
+        <item name="colorError">#FFB4AB</item>
+        <item name="colorOnError">#690005</item>
+
+        <item name="android:statusBarColor">#1A1110</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
+
+    <style name="Theme.GroupProject" parent="Base.Theme.GroupProject" />
 </resources>

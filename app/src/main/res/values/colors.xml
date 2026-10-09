@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background">#EFF4BD
-    </color>
-
-    <color name="primary_text">#FF000000</color>
-    <color name="secondary_text">#362F22</color>
-    <color name="white">#FFFFFFFF</color>
-
-    <color name="button">#516F71</color>
+    <color name="maroon_primary">#8D2B2B</color>
+    <color name="maroon_dark">#5D1C1C</color>
+    <color name="cream_bg">#FFF8F0</color>
+    <color name="orange_accent">#FFB74D</color>
+    <color name="text_dark">#212121</color>
+    <color name="text_grey">#5D4037</color>
 </resources>

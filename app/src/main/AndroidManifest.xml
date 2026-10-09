@@ -21,93 +21,64 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity" android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
 
         <!-- Recipient -->
-        <activity android:name=".recipient.RecipientActivity" android:exported="false" />
-        <activity android:name=".recipient.AvailableFoodRA" android:exported="false" />
-        <activity android:name=".recipient.PickupRA" android:exported="false" />
-        <activity android:name=".recipient.HistoryRA" android:exported="false" />
-
-        <!-- Donor -->
-        <activity android:name=".donor.DonorHomeActivity" android:exported="false" />
-        <activity android:name=".donor.AddFoodActivity" android:exported="false" />
-        <activity android:name=".donor.MyListingsActivity" android:exported="false" />
-        <activity android:name=".donor.EditFoodActivity" android:exported="false" />
-        <activity android:name=".donor.ReservationsActivity" android:exported="false" />
-        <activity android:name=".donor.DonorHistoryActivity" android:exported="false" />
-        <activity android:name=".donor.SchedulePickupActivity" android:exported="false" />
-
-        <!-- Volunteer -->
-        <activity android:name=".volunteer.VolunteerActivity" android:exported="false" />
-        <activity android:name=".volunteer.AvailablePickupsActivity" android:exported="false" />
-        <activity android:name=".volunteer.MyPickupsActivity" android:exported="false" />
-        <activity android:name=".volunteer.CollectionHistoryActivity" android:exported="false" />
-        <activity android:name=".volunteer.SchedulePickupActivity" android:exported="false" />
-
-<<<<<<< HEAD
+        <activity
+            android:name=".recipient.RecipientActivity"
+            android:exported="false" />
+        <activity
+            android:name=".recipient.AvailableFoodRA"
+            android:exported="false" />
         <activity
             android:name=".recipient.PickupRA"
             android:exported="false" />
-
         <activity
             android:name=".recipient.HistoryRA"
-            android:exported="false"/>
+            android:exported="false" />
 
-        <!--donor-->
-
+        <!-- Donor -->
         <activity
             android:name=".donor.DonorHomeActivity"
             android:exported="false" />
-
         <activity
             android:name=".donor.AddFoodActivity"
             android:exported="false" />
-
         <activity
             android:name=".donor.MyListingsActivity"
             android:exported="false" />
-
         <activity
             android:name=".donor.EditFoodActivity"
             android:exported="false" />
-
         <activity
             android:name=".donor.ReservationsActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".donor.DonorHistoryActivity"
+            android:exported="false" />
         <activity
             android:name=".donor.SchedulePickupActivity"
             android:exported="false" />
 
-        <activity
-            android:name=".donor.DonorHistoryActivity"
-            android:exported="false" />
-        
-<!--volunteer-->
+        <!-- Volunteer -->
         <activity
             android:name=".volunteer.VolunteerActivity"
             android:exported="false" />
-
         <activity
             android:name=".volunteer.AvailablePickupsActivity"
             android:exported="false" />
-
         <activity
             android:name=".volunteer.MyPickupsActivity"
             android:exported="false" />
-
         <activity
             android:name=".volunteer.CollectionHistoryActivity"
             android:exported="false" />
-
         <activity
             android:name=".volunteer.SchedulePickupActivity"
             android:exported="false" />
 
     </application>
 
-=======
-    </application>
->>>>>>> b54270e (Update fixes)
 </manifest>

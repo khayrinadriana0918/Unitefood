@@ -1,8 +1,34 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.GroupProject" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Primary brand color -->
+        <item name="colorPrimary">#8D2B2B</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">#FFDAD6</item>
+        <item name="colorOnPrimaryContainer">#410002</item>
+
+        <!-- Secondary / accent -->
+        <item name="colorSecondary">#FFB74D</item>
+        <item name="colorOnSecondary">#212121</item>
+        <item name="colorSecondaryContainer">#FFE0B2</item>
+        <item name="colorOnSecondaryContainer">#3E2723</item>
+
+        <!-- Background / surface -->
+        <item name="android:colorBackground">#FFF8F0</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#212121</item>
+        <item name="colorOnSurfaceVariant">#5D4037</item>
+
+        <!-- Outline -->
+        <item name="colorOutline">#8D6E63</item>
+
+        <!-- Error -->
+        <item name="colorError">#B3261E</item>
+        <item name="colorOnError">#FFFFFF</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">#5D1C1C</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <style name="Theme.GroupProject" parent="Base.Theme.GroupProject" />
