@@ -50,6 +50,30 @@
             android:name=".donor.DonorHomeActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".donor.AddFoodActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".donor.MyListingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".donor.EditFoodActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".donor.ReservationsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".donor.SchedulePickupActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".donor.DonorHistoryActivity"
+            android:exported="false" />
+        
 <!--volunteer-->
         <activity
             android:name=".volunteer.VolunteerActivity"
@@ -71,9 +95,6 @@
             android:name=".volunteer.SchedulePickupActivity"
             android:exported="false" />
 
-        <activity
-            android:name=".donor.AddFoodActivity"
-            android:exported="false" />
     </application>
 
 </manifest>
