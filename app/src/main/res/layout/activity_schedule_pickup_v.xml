@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
@@ -22,7 +20,7 @@
             android:gravity="center" />
 
         <TextView
-            android:id="@+id/tvFoodName"
+            android:id="@+id/foodNameTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -46,11 +44,11 @@
             android:layout_marginTop="32dp"
             android:text="Select Pickup Date"
             android:textColor="@color/primary_text"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="16sp" />
 
         <Button
-            android:id="@+id/btnPickDate"
+            android:id="@+id/dateBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -59,25 +57,16 @@
             android:textColor="@color/white" />
 
         <TextView
-            android:id="@+id/tvDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="No date selected"
-            android:textColor="@color/secondary_text"
-            android:textSize="14sp" />
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Select Pickup Time"
             android:textColor="@color/primary_text"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="16sp" />
 
         <Button
-            android:id="@+id/btnPickTime"
+            android:id="@+id/timeBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -85,26 +74,15 @@
             android:backgroundTint="@color/button"
             android:textColor="@color/white" />
 
-        <TextView
-            android:id="@+id/tvTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="No time selected"
-            android:textColor="@color/secondary_text"
-            android:textSize="14sp" />
-
         <Button
-            android:id="@+id/btnConfirm"
+            android:id="@+id/confirmPickupBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:text="Confirm Pickup"
-            android:textSize="16sp"
             android:textStyle="bold"
             android:backgroundTint="@color/button"
             android:textColor="@color/white" />
 
     </LinearLayout>
-
 </ScrollView>
